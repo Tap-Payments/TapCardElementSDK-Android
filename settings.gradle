@@ -1,0 +1,3 @@
+rootProject.name='TapCardElementSDK'
+include ':app'
+include ':tapcardelementsdk'
