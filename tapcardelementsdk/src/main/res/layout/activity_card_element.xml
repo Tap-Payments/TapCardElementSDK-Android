@@ -12,7 +12,7 @@
         />
     <company.tap.tapuilibrary.TapChipGroup
         android:layout_width="match_parent"
-        android:layout_height="50dp">
+        android:layout_height="wrap_content">
        <!-- <company.tap.tapuilibrary.TapChip
             android:id="@+id/tap_card_chip"
             android:layout_width="wrap_content"
