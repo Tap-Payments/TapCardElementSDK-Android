@@ -5,7 +5,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.EditText
-import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import company.tap.tapuilibrary.TapImageView
 import company.tap.tapuilibrary.TapTextView
@@ -16,10 +15,13 @@ import company.tap.tapuilibrary.TapTextView
 Copyright (c) 2020    Tap Payments.
 All rights reserved.
  **/
-class CardAdapter(private val arrayList: ArrayList<Int>)  : RecyclerView.Adapter<CardAdapter.ViewHolder>() {
+class CardAdapter(private val arrayList: ArrayList<Int>) :
+    RecyclerView.Adapter<CardAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        return ViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.cardelement_list, parent, false))
+        return ViewHolder(
+            LayoutInflater.from(parent.context).inflate(R.layout.cardelement_list, parent, false)
+        )
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
@@ -37,12 +39,13 @@ class CardAdapter(private val arrayList: ArrayList<Int>)  : RecyclerView.Adapter
             val imageViewvisa = itemView.findViewById<TapImageView>(R.id.imageView_visa)
             val imageViewamex = itemView.findViewById<TapImageView>(R.id.imageView_amex)
             itemView.setOnClickListener {
-                textViewcard.visibility= View.GONE
+                textViewcard.visibility = View.GONE
                 imageViewamex.visibility = View.VISIBLE
             }
             textViewcard.setOnClickListener { view ->
                 var inputText = ""
-                val builder: android.app.AlertDialog.Builder = android.app.AlertDialog.Builder(itemView.context)
+                val builder: android.app.AlertDialog.Builder =
+                    android.app.AlertDialog.Builder(itemView.context)
                 builder.setTitle("Chip Content")
                 builder.setMessage("Enter a string value")
                 // Set up the input
@@ -63,11 +66,9 @@ class CardAdapter(private val arrayList: ArrayList<Int>)  : RecyclerView.Adapter
                 ) { dialog, _ -> dialog.cancel() }
                 builder.show()
             }
-            }
-            //textView.text = version.name
-
-           // Glide.with(itemView.context).load(version.url).into(imageView)
         }
 
-
     }
+
+
+}

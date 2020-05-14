@@ -1,13 +1,11 @@
 package company.tap.tapcardelementsdk
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.LinearLayout
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import company.tap.tapanimationkit.AnimateView
-
 import company.tap.tapuilibrary.TapImageView
 import company.tap.tapuilibrary.TapTextView
 
@@ -25,7 +23,7 @@ class CardElementActivity : AppCompatActivity() {
         val groupName = findViewById<TapTextView>(R.id.group_name)
         groupName.text = "Recent"
         val chipRecyler = findViewById<RecyclerView>(R.id.chip_recycler)
-        val arrayList = arrayListOf<Int>(1,2,3,4,5)
+        val arrayList = arrayListOf<Int>(1, 2, 3, 4)
         chipRecyler.layoutManager = LinearLayoutManager(this, RecyclerView.HORIZONTAL, false)
         chipRecyler.adapter = CardAdapter(arrayList)
     }
